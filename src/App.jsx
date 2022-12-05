@@ -1,7 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
-import ToDoForm from './Components/ToDoForm';
+//import ToDoForm from './Components/ToDoForm';
 import List from './Components/ToDoList';
+import Form from './Components/Form';
 
 function App() {
   const [toDoInputValue, setToDoInputValue] = useState('');
@@ -15,7 +17,13 @@ function App() {
   return (
     <>
       <h1>Todo List</h1>
-      <ToDoForm
+      {/* <ToDoForm
+        toDoInputValue={toDoInputValue}
+        setTodos={setTodos}
+        setToDoInputValue={setToDoInputValue}
+        todos={todos}
+      /> */}
+      <Form
         toDoInputValue={toDoInputValue}
         setTodos={setTodos}
         setToDoInputValue={setToDoInputValue}

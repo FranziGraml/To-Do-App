@@ -1,7 +1,8 @@
+import React from 'react';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
-export default function List({ todos }) {
+export default function List({ todos, setTodos }) {
   return (
     <>
       <ul>
@@ -11,13 +12,13 @@ export default function List({ todos }) {
               {todo.name}
               {/* <input
                 type="checkbox"
-                  checked={todo.isChecked}
+                checked={todo.isChecked}
                 onChange={event => {
                   setTodos(
-                    todos.map(
-                      todo_ => todo_.id === todo.id
-                      ? { ...todo_, isChecked: event.target.checked }
-                          : todo_
+                    todos.map(todo_ =>
+                      todo_.id === todo.id
+                        ? { ...todo_, isChecked: event.target.checked }
+                        : todo_
                     )
                   );
                 }}

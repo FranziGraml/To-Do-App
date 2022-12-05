@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import React from 'react';
 export default function ToDoForm(
   toDoInputValue,
   setTodos,
@@ -8,15 +10,16 @@ export default function ToDoForm(
     <form
       onSubmit={event => {
         event.preventDefault();
+
         setTodos([
           ...todos,
 
-          /* {
+          /*   {
             name: toDoInputValue,
             id: nanoid(),
           }, */
-          /*  ]); */
         ]);
+
         setToDoInputValue('');
       }}
     >
