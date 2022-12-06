@@ -14,10 +14,10 @@ export default function ToDoForm(
         setTodos([
           ...todos,
 
-          /*   {
+          {
             name: toDoInputValue,
             id: nanoid(),
-          }, */
+          },
         ]);
 
         setToDoInputValue('');
