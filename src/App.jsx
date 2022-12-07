@@ -29,7 +29,7 @@ function App() {
         setToDoInputValue={setToDoInputValue}
         todos={todos}
       />
-      <List todos={todos} />
+      <List todos={todos} setTodos={setTodos} />
     </>
   );
 }
