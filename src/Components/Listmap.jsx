@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import ButtonDelete from './DeleteButton';
 
-export default function List({ todos, setTodos }) {
+export default function List({ id, todos, setTodos }) {
   return (
     <>
       <ul>
@@ -10,19 +11,17 @@ export default function List({ todos, setTodos }) {
           return (
             <li key={todo.id}>
               {todo.name}
-              {/* <input
-                type="checkbox"
-                checked={todo.isChecked}
-                onChange={event => {
-                  setTodos(
-                    todos.map(todo_ =>
-                      todo_.id === todo.id
-                        ? { ...todo_, isChecked: event.target.checked }
-                        : todo_
-                    )
-                  );
+
+              <ButtonDelete id={todo.id} todos={todos} setTodos={setTodos} />
+
+              {/*     <button
+                type="button"
+                onClick={() => {
+                  setTodos(todos.filter(todo_ => todo_.id !== todo.id));
                 }}
-              /> */}
+              >
+                delete
+              </button> */}
             </li>
           );
         })}
