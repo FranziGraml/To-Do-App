@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import ButtonDelete from './DeleteButton';
 
-export default function List({ id, todos, setTodos }) {
+export default function List({ id, todos, setTodos, onEditItemName, toEdit }) {
   return (
     <>
       <ul>
@@ -22,6 +22,10 @@ export default function List({ id, todos, setTodos }) {
               >
                 delete
               </button> */}
+              <button onClick={() => onEditItemName(todo, index)}>
+                {' '}
+                {toEdit ? 'Cancel' : 'Edit'}
+              </button>
             </li>
           );
         })}
